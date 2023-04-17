@@ -12,3 +12,5 @@ streamlit~=1.20.0
 streamlit-extras~=0.2.6
 streamlit-permalink~=0.3.0
 stringcase~=1.2.0
+geographiclib==2.0
+geopy==2.3.0
