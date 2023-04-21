@@ -49,4 +49,19 @@ google map
 
 
 
+<!-- on dashboard main page  -->
+diplay startatical
+diapy map
+time series data diplay as line chart
+resultant df diplay,download option
 
+
+<!-- maike one page like (xyz) -->
+make form after submiting create figure and add to list,download that graph as png 
+all data plots like 
+top highest (citys,state,county) bar ,pie ,map
+
+<!-- custum algorithm page -->
+
+
+<!-- google map like if api is genrated  -->

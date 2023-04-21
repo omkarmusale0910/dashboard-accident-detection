@@ -1,7 +1,8 @@
 import pandas as pd
+from utils.params import category_of_impact
 
 # tested
-def filter_on_severity(df:pd.DataFrame,low:int=1,high:int=4):
+def filter_on_severity(df:pd.DataFrame,low:int=2,high:int=4):
     mask1=df['Severity']>=low
     mask2=df['Severity']<=high
     df=df[mask1 & mask2]
@@ -10,13 +11,12 @@ def filter_on_severity(df:pd.DataFrame,low:int=1,high:int=4):
 
 # tested in our data severity==1 no data point present may be
 def filter_on_severity_low_mid_high(df:pd.DataFrame,severity:str='high')->pd.DataFrame:
-    category_of_impact=['low','mid','high']
     if(severity in category_of_impact):
         if(severity==category_of_impact[0]):
-            mask=df['Severity']<=1
+            mask=df['Severity']<=2
             df=df[mask]
         elif(severity==category_of_impact[1]):
-            mask1=df['Severity']>=2
+            mask1=df['Severity']>=3
             mask2=df['Severity']<=3
             df=df[mask1 & mask2]
         else:
@@ -40,7 +40,11 @@ def filter_out_null_value_rows(df:pd.DataFrame,list_columns:list)->pd.DataFrame:
 
 
 def filter_on_start_end_datetime(df:pd.DataFrame,start_dt,end_dt)->pd.DataFrame:
-    pass
+    mask_st=df['Start_Time']>=start_dt
+    mask_ed=df['Start_Time']<=end_dt
+    filter_df=df[mask_st & mask_ed]
+    return filter_df
+
 
 
 
