@@ -13,7 +13,7 @@ from streamlit_extras.dataframe_explorer import dataframe_explorer
 
 
 st.set_page_config(layout="wide", page_title="Dashboard")
-US_accident_df=get_us_accident(20000)
+US_accident_df=get_us_accident(200000)
 US_accident_df=process_input_data(US_accident_df)
 
 
@@ -33,7 +33,7 @@ def OnChangeSeverityFilter():
 
 # input
 with st.sidebar:
-    input_start_date=st.date_input("**Enter the start date** :calendar:",value=dt.date(2016,1,1),min_value=MIN_DATE,max_value=MAX_DATE)
+    input_start_date=st.date_input("**Enter the start date** :calendar:",value=MIN_DATE,min_value=MIN_DATE,max_value=MAX_DATE)
     input_start_time=st.time_input("**Select Start Time** :clock10:",value=MIN_TIME)
     input_end_date=st.date_input("**Select End date** :calendar:",value=dt.date(2020,1,1),min_value=MIN_DATE,max_value=MAX_DATE)
     input_end_time=st.time_input("**Select End Time** :clock10:",value=MAX_TIME)
@@ -88,8 +88,13 @@ display_states(US_accident_df)
 us_accident_coorinate=us_map_data(US_accident_df)
 st.map(us_accident_coorinate,use_container_width=True)
 
-st.dataframe(dataframe_explorer(US_accident_df),use_container_width=True)
+st.dataframe(dataframe_explorer(US_accident_df),use_container_width=True,height=500)
 # st.write(list(US_accident_df.columns))
 
-# st.pydeck_chart(deck_chart(US_accident_df))
+
+st.pydeck_chart(deck_chart(US_accident_df))
+
+
+def send_data()->pd.DataFrame:
+    return US_accident_df
 

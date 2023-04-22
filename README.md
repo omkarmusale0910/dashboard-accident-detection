@@ -57,6 +57,7 @@ resultant df diplay,download option
 
 
 <!-- maike one page like (xyz) -->
+map trace in plotly
 make form after submiting create figure and add to list,download that graph as png 
 all data plots like 
 top highest (citys,state,county) bar ,pie ,map

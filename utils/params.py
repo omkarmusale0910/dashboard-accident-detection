@@ -6,7 +6,7 @@ from utils.get_data import get_unique_values_in_column,get_us_accident
 filter_param_disable={'State':False,'County':True,'City':True,'Zipcode':True}
 filter_severity_disable={'Range':False,'Block':True}
 US_accident_df=get_us_accident(10000)
-MIN_DATE=dt.date(2016,1,1)
+MIN_DATE=dt.date(2016,3,23)
 MAX_DATE=dt.date(2020,12,31)
 MIN_TIME=dt.time(0,0,0)
 MAX_TIME=dt.time(23,59,59)
